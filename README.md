@@ -2,6 +2,8 @@
 
 A Vue.js-based chat interface demo for interacting with DeepSeek language models.
 
+!["YouTube Video](maxresdefault.webp)
+
 
 ## Features
 
