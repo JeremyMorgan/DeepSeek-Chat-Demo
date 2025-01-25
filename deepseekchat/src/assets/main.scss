@@ -1,0 +1,161 @@
+// Base styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+// Chat interface styles
+.chat-container {
+  max-width: 1200px; // Increased from 800px
+  margin: 0 auto;
+  height: 90vh; // Slightly reduced to accommodate header
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  p {
+    margin: 0.5em 0;
+  }
+  
+  code {
+    background-color: #f0f0f0;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+  
+  pre {
+    background-color: #f6f8fa;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+  
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 2em;
+  }
+  
+  blockquote {
+    margin: 0.5em 0;
+    padding-left: 1em;
+    border-left: 3px solid #ddd;
+    color: #666;
+  }
+}
+
+.user {
+  background-color: #e3f2fd;
+  margin-left: 20%;
+}
+
+.assistant {
+  background-color: #f5f5f5;
+  margin-right: 20%;
+}
+
+.system {
+  background-color: #ffebee;
+  text-align: center;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  min-height: 40px;
+  max-height: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a049;
+  }
+}
+
+// Home view styles
+main {
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.thinking {
+  background-color: #00d0ff;
+  margin-right: 20%;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: #cccccc;
+  }
+}
+.assistant-think {
+  background-color: #f8f8f8;
+  margin-right: 20%;
+  border: 1px solid #e0e0e0;
+
+  .think-header {
+    padding: 5px 0;
+  }
+
+  .toggle-think {
+    background-color: #757575;
+    padding: 5px 10px;
+    font-size: 0.9em;
+
+    &:hover {
+      background-color: #616161;
+    }
+  }
+
+  p {
+    margin: 8px 0;
+  }
+}
