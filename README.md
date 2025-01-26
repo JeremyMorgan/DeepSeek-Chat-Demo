@@ -42,6 +42,13 @@ Build the application:
 npm run build
 ```
 
+Or you can run 
+
+```
+docker-compose up
+```
+The Docker image is [also available at Docker Hub](https://hub.docker.com/r/jeremymorgan/deepseek-1-5b-chat-demo/tags)
+ 
 ## Testing
 Run unit tests:
 
@@ -70,11 +77,9 @@ npm run test:unit
 CC0 1.0 Universal
 
 ## Contributing
-Fork the repository
-Create your feature branch
-Commit your changes
-Push to the branch
-Create a new Pull Request
+Contributions are always welcome. 
+
+
 
 
 
