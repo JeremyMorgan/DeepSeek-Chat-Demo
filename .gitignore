@@ -1,18 +1,26 @@
 # Dependencies
+/node_modules
+/.pnp
+.pnp.js
 node_modules/
 .pnpm-store/
 
-# Build outputs
+/# Build outputs
 dist/
 dist-ssr/
+/dist
+/build
 
 # Test coverage
 coverage/
+/coverage
 
 # Environment files
 .env
 .env.*
 !.env.example
+.env.local
+.env.*.local
 
 # Logs
 logs/
@@ -37,6 +45,8 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+.vscode
+.idea
 
 # OS generated files
 .DS_Store
@@ -55,3 +65,12 @@ Thumbs.db
 /cypress/screenshots/
 /test-results/
 /playwright-report/
+
+# Vue.js specific
+.DS_Store
+node_modules
+dist
+
+# Ollama specific
+models/
+.ollama/

@@ -49,32 +49,42 @@ const toggleThought = (index) => {
 const sendMessage = async () => {
   if (!userInput.value.trim()) return
 
-  // Add user message
-  messages.value.push({
-    role: 'user',
-    content: userInput.value
-  })
-
-  // Clear input
-  const userMessage = userInput.value
-  userInput.value = ''
-  isThinking.value = true
-
   try {
-    const response = await fetch('http://localhost:11434/api/generate', {
+    // Add user message
+    messages.value.push({
+      role: 'user',
+      content: userInput.value
+    })
+
+    // Clear input
+    const userMessage = userInput.value
+    userInput.value = ''
+    isThinking.value = true
+
+    // Get the current host from the window location
+    const host = window.location.hostname;
+    console.log('Sending request to:', `http://${host}:11435/api/generate`);
+    
+    const response = await fetch(`http://${host}:11435/api/generate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'deepseek-r1:32b',
+        model: 'deepseek-r1:1.5b',
         prompt: userMessage,
         stream: false
       })
-    })
+    });
 
-    const data = await response.json()
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
+    const data = await response.json();
+    console.log('Response:', data);
+    
+    // Add AI response
     // Add AI response
     const thinkMatch = data.response.match(/<think>(.*?)<\/think>/s)
 

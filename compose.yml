@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+      - "11435:11435"
+    volumes:
+      - ollama-data:/root/.ollama
+volumes:
+  ollama-data:
